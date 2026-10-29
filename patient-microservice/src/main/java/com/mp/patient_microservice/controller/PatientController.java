@@ -13,6 +13,7 @@ import com.mp.patient_microservice.dto.PatientRequestDTO;
 import com.mp.patient_microservice.dto.PatientResponseDTO;
 import com.mp.patient_microservice.service.PatientService;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @RestController 
@@ -29,7 +30,7 @@ public class PatientController {
     }
 
     @PostMapping ("/create")
-    public ResponseEntity<PatientResponseDTO> createPatient(@RequestBody PatientRequestDTO patientRequestDTO) {
+    public ResponseEntity<PatientResponseDTO> createPatient(@Valid @RequestBody PatientRequestDTO patientRequestDTO) {
         try {
             PatientResponseDTO patientResponseDTO = patientService.createPatient(patientRequestDTO);
             return ResponseEntity.ok().body(patientResponseDTO);

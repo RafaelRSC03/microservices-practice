@@ -77,3 +77,27 @@ A common use of lambdas is in subscribe functions for Angular this is an example
         complete: () => console.log('Observable emitted the complete notification')
     });
 ```
+
+**Annotations**
+
+Spring boot annotations serve multiple purposes here are some I didn't know exactly what they did:
+
+- **_@Valid_**
+    
+    It is used to enforce validations present on models such validations as @Email or @NotNull.
+
+    - To clean the response message it is compulsory to implement an exception handler such as this
+
+        ``` 
+            @RestControllerAdvice 
+                public class GlobalExceptionHandler {
+                    
+                    @ExceptionHandler(MethodArgumentNotValidException.class)
+                    public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException mex){
+                        
+                        Map<String, String> errors = new HashMap<>();
+                        mex.getBindingResult().getFieldErrors().forEach(error -> {errors.put(error.getField(), error.getDefaultMessage());});
+                        return ResponseEntity.badRequest().body(errors);
+                    }
+                }
+        ```
