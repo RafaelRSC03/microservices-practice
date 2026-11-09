@@ -37,6 +37,22 @@ It is an embedded database, that doesn't change the fact that it is rather usefu
 
 - Ids are usually UUIDs in order to not compromise security or making user ids easily readable.
 
+**Logging**
+
+Implementing logs is surprisingly easy as it is matter of configuring a few things.
+
+- Add logger level to application.properties
+
+```
+    #info/warn/error
+    logger.level.root=info
+```
+- Invoke Logger in all the classes that call the logger
+
+```
+    Logger log = LoggerFactory.getLogger(ContainedClass.class);
+```
+
 ### Code structure
 
 **Lambda functions**
@@ -101,3 +117,22 @@ Spring boot annotations serve multiple purposes here are some I didn't know exac
                     }
                 }
         ```
+
+        **This does not work if the exception is being caught earlier (if there is a try_catch block it <u>_won't work_</u>)**
+
+- **_@Validated(Default.class) / @Validated({Default.class, ValidationInterface.class})_**
+    A few things to cover here, first of all, *@Validated(Default.class)* Does exactly the same as @Valid 
+    This doesn't @Validated({Default.class, ValidationInterface.class})
+
+    This basically means that you can assign certain validations to certain groups, all you need to do is create the inteface ValidationInterface and once it is created modify the @NotBlank annotation given to the attribute you want to assign that validation interface, for example:
+
+    ```
+        @NotBlank(groups = ValidationInterface.class, message = "Registered Date is required")
+    ```
+
+
+
+
+### Documentation
+
+- ##### Swagger

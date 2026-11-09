@@ -1,3 +1,13 @@
 /home/rafael/Programming/Java/Course proyects/microservices-practice/patient-microservice/src/main/java/com/mp/patient_microservice/PatientMicroserviceApplication.java
 /home/rafael/Programming/Java/Course proyects/microservices-practice/patient-microservice/src/main/java/com/mp/patient_microservice/ServletInitializer.java
+/home/rafael/Programming/Java/Course proyects/microservices-practice/patient-microservice/src/main/java/com/mp/patient_microservice/controller/PatientController.java
+/home/rafael/Programming/Java/Course proyects/microservices-practice/patient-microservice/src/main/java/com/mp/patient_microservice/dto/PatientRequestDTO.java
+/home/rafael/Programming/Java/Course proyects/microservices-practice/patient-microservice/src/main/java/com/mp/patient_microservice/dto/PatientResponseDTO.java
+/home/rafael/Programming/Java/Course proyects/microservices-practice/patient-microservice/src/main/java/com/mp/patient_microservice/dto/validators/CreatePatientValidationGroup.java
+/home/rafael/Programming/Java/Course proyects/microservices-practice/patient-microservice/src/main/java/com/mp/patient_microservice/exceptions/EmailAlreadyExistsException.java
+/home/rafael/Programming/Java/Course proyects/microservices-practice/patient-microservice/src/main/java/com/mp/patient_microservice/exceptions/GlobalExceptionHandler.java
+/home/rafael/Programming/Java/Course proyects/microservices-practice/patient-microservice/src/main/java/com/mp/patient_microservice/exceptions/PatientNotFoundException.java
+/home/rafael/Programming/Java/Course proyects/microservices-practice/patient-microservice/src/main/java/com/mp/patient_microservice/mapper/PatientMapper.java
 /home/rafael/Programming/Java/Course proyects/microservices-practice/patient-microservice/src/main/java/com/mp/patient_microservice/model/Patient.java
+/home/rafael/Programming/Java/Course proyects/microservices-practice/patient-microservice/src/main/java/com/mp/patient_microservice/repository/PatientRepository.java
+/home/rafael/Programming/Java/Course proyects/microservices-practice/patient-microservice/src/main/java/com/mp/patient_microservice/service/PatientService.java

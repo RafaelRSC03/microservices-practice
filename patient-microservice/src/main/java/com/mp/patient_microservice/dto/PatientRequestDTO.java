@@ -1,5 +1,7 @@
 package com.mp.patient_microservice.dto;
 
+import com.mp.patient_microservice.dto.validators.CreatePatientValidationGroup;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -25,6 +27,6 @@ public class PatientRequestDTO {
     @NotBlank(message = "Date of Birth is required")
     private String dateOfBirth; // Consider using a Date type for better validation and formatting
 
-    @NotBlank(message = "Registered Date is required")
+    @NotBlank(groups = CreatePatientValidationGroup.class, message = "Registered Date is required")
     private String registeredDate; //This seems rather wrong, the registered date should be set by the system, not provided by the user.
 }
